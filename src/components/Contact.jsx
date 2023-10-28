@@ -40,8 +40,8 @@ const Contact = () => {
 
       emailjs
         .send(
-          "service_3gv5rkv",
-          "template_pweozco",
+          process.env.REACT_APP_EMAIL_SERVICE_ID,
+          process.env.REACT_APP_EMAIL_TEMPLATE_ID,
           {
             from_name: form.name,
             to_name: "Zarrar Palekar",
@@ -49,7 +49,7 @@ const Contact = () => {
             to_email: "zarrar@live.in",
             message: form.message,
           },
-          "_V0zFBWObL7UZuNwh"
+          process.env.REACT_APP_EMAIL_PUBLIC_KEY
         )
         .then(
           () => {
